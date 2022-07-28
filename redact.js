@@ -1,34 +1,3 @@
-
-
-function startApp() {
-  // Your entire app should not necessarily be coded inside this 
-  // single function (though there's no penalty for that), 
-  // so create and use/call additional functions from here
-
-  // This function executes the extract function and also calculates the time taken to scrumble the words
-  function redAct() {
-
-    let validation = formValidation(main_text.value, scrambled_text.value, symbol.value);
-
-    if (validation == false) {
-      return;
-    } else {
-      let startTime = performance.now();
-      extract();
-
-      let endTime = performance.now();
-      let scrambleTime = (endTime - startTime) / 1000;
-
-      console.log(`Time Taken to Scrumble words: ${scrambleTime} secs`);
-    }
-
-
-  }
-  redAct();
-
-};
-
-
 const main_text = document.querySelector("#Text-input");
 const scrambled_text = document.querySelector("#form_input");
 const symbol = document.querySelector("#sym-bol");
@@ -40,7 +9,6 @@ function getArraysIntersection(a1, a2) {
 }
 
 function extract() {
-
   const words = main_text.value.match(/\w+/g);
   let newWord = words.join(" ");
   let symbols = symbol.value;
@@ -81,12 +49,16 @@ function extract() {
   main_text.value = newWord;
 }
 
+const button = document.querySelector("button"); //the REDACT button
+
+button.addEventListener("click", extract());
+
+
 // This function validates the inputs. 
 // It ensures that the main text and words to scrumble inputs are not empty.
 // It also ensures the symbol input does not contain more than one character 
 
 let item = document.createElement("span");
-item.setAttribute("id", "err")
 item.style.color = "red";
 
 function formValidation(mainText, scrumWords, sym) {
@@ -112,18 +84,30 @@ function formValidation(mainText, scrumWords, sym) {
       // return false;
     }
     return false;
-  } else {
-    const delItem = document.querySelector("#err");
-    if (delItem == null) {
-      return;
-    } else {
-      delItem.remove();
-    }
-
   }
 
 }
 
-// ======= DO NOT EDIT ============== //
-export default startApp;
-  // ======= EEND DO NOT EDIT ========= //
+// This function executes the extract function and also calculates the time taken to scrumble the words
+function redAct() {
+
+  const main_text = document.querySelector("#Text-input").value;
+  const scrambled_text = document.querySelector("#form_input").value;
+  const symbol = document.querySelector("#sym-bol").value;
+
+  let validation = formValidation(main_text, scrambled_text, symbol);
+
+  if (validation == false) {
+    return;
+  } else {
+    let startTime = performance.now();
+    extract();
+
+    let endTime = performance.now();
+    let scrambleTime = (endTime - startTime) / 1000;
+
+    console.log(`Time Taken to Scrumble words: ${scrambleTime} secs`);
+  }
+
+
+}

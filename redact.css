@@ -1,0 +1,141 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root{
+  --form-borders: 1px solid black;
+  --form-border-radius:10px;
+}
+
+body {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ---------------------HEADER------------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  background-color: rgb(240, 233, 224);
+  border-bottom: 1px dotted rgb(168, 168, 207);
+}
+
+
+.logo-img {
+/*   width: 80px; */
+  height: 80px;
+  border-radius: var(--form-border-radius);
+}
+
+/* ---------------------MAIN--------------------- */
+
+.main-txt {
+  margin: 20 auto;
+  overflow: hidden;
+  padding: 30px;
+/*   padding-bottom: 20px; */
+  width: 50%;
+/*   position: absolute; */
+/*   top: 20%; */
+/*   left: 25%; */
+/*   align-items: center; */
+  border-radius: var(--form-border-radius);
+  transition: 0.75s;
+  background-image: linear-gradient(rgb(233, 217, 217), rgb(118, 118, 224));
+}
+
+.form-txt {
+  display: flex;
+  flex-direction:column;
+  margin-top: 20px;
+}
+
+
+
+h3 {
+  text-align:center;
+/*   margin-bottom: 20px; */
+}
+
+.input {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  padding: 10px;
+  border-radius: var(--form-border-radius);
+  border: var(--form-borders);
+  min-width: 100%;
+  max-width: 100%;
+/*   resize: none; */
+  outline: none;
+}
+
+.user-txt {
+  display: block;
+  font-size: large;
+  margin-bottom: 5px;
+}
+/* 
+.form-input {
+  padding: 10px;
+  border-radius: 7px;
+  display: block;
+  width: 100%;
+/*   text-align: left; */
+/*   border: none; */
+/*   outline: none; */
+/* } */ 
+
+
+.redact-btn:hover {
+  background-color: white;
+}
+
+.submit-btn{
+  margin-top: 50px;
+  text-align: center;
+}
+  
+
+.redact-btn {
+  cursor: pointer;
+  width: 40%;
+  height: 35px;
+  border:var(--form-borders);
+/*   border: none; */
+  font-size: 18px;
+  border-radius: var(--form-border-radius);
+/*   margin-top: 20px; */
+  text-align: center;
+}
+
+/* ---------------------FOOTER------------------- */
+
+.footer-text {
+  border-top: 1px dotted rgb(168, 168, 207);
+  margin-top: 40%;
+  font-size: 10px;
+  padding: 20px;
+  text-align: center;
+  }
+
+
+
+textarea,
+input::placeholder {font-family: Montserrat;}
+
+
+/*------------Responsiveness----------------------  */
+@media(max-width:426px) {
+  .redact-btn {
+        width: 100%;
+    }
+  .main-txt{
+    padding: 10px;
+  }
+}

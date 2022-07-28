@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name of chosen challenge</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redactr</title>
+  <link rel="stylesheet" href="redact.css">
 
-    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-    <h2>make some magic here!!</h2>
 
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
-    <script src="index.mjs" type="module"></script>
-    <!-- // ============= EEND DO NOT EDIT ============== // -->
+<body>
+  <header class="header">
+    <div class="logo">
+      <img class="logo-img" src="./download.png" alt="logo" />
+    </div>
+  </header>
+  <main class="main-txt">
+
+    <div class="logo">
+      <img class="logo-img" src="./download.png" alt="logo" />
+    </div>
+
+    <h3>Redact App</h3>
+    <form action="" class="form-txt">
+      <div class="input">
+        <label for="main-T" class="user-txt">Main Text*</label>
+        <!-- <input type="text" name="text"   class="form-input" id="Text-input"required /> -->
+        <textarea name="text" id="Text-input" class="form-input" placeholder="Type the text you want to redact"
+          cols="68" rows="1" required></textarea>
+      </div>
+
+      <div class="input">
+        <label for="symbol" class="user-txt">Symbol</label>
+        <input type="text" class="form-input" id="sym-bol" name="text"
+          placeholder="Type only one symbol to replace redacted word(s)" required />
+      </div>
+
+      <div class="input">
+        <label for="New-T" class="user-txt">Scrambled Text</label>
+        <input type="text" class="form-input" id="form_input" name="text" required />
+      </div>
+      <div class="submit-btn">
+        <button type="button" class="redact-btn">Redact Text</button>
+      </div>
+    </form>
+
+    <footer>
+      <p class="footer-text">
+        &copy; copyright 2022, AltSchool Africa Holiday Challenge by
+        circle 203.
+      </p>
+    </footer>
+  </main>
+
+
+  <!--   <script src="./redact.js"></script> -->
+
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
+  <script src="index.mjs" type="module"></script>
+  <!-- // ============= EEND DO NOT EDIT ============== // -->
 </body>
+
 </html>
